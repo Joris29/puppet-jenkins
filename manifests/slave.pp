@@ -119,7 +119,7 @@ class jenkins::slave (
   Optional[String] $masterurl             = undef,
   Optional[String] $autodiscoveryaddress  = undef,
   Optional[String] $ui_user               = undef,
-  Optional[String] $ui_pass               = undef,
+  Optional[Variant[String[1], Sensitive[String[8]]]] $ui_pass = undef,
   Optional[String] $tool_locations        = undef,
   Optional[String] $source                = undef,
   Optional[String] $proxy_server          = undef,

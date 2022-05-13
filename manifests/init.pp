@@ -309,7 +309,7 @@ class jenkins (
   Boolean $cli                                    = true,
   Optional[Stdlib::Absolutepath] $cli_ssh_keyfile = undef,
   Optional[String] $cli_username                  = undef,
-  Optional[String] $cli_password                  = undef,
+  Optional[Variant[String[1], Sensitive[String[8]]]] $cli_password = undef,
   Optional[String] $cli_password_file             = undef,
   Integer $cli_tries                              = $jenkins::params::cli_tries,
   Integer $cli_try_sleep                          = $jenkins::params::cli_try_sleep,
