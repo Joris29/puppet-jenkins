@@ -309,7 +309,7 @@ class jenkins (
   Boolean $cli                                    = true,
   Optional[Stdlib::Absolutepath] $cli_ssh_keyfile = undef,
   Optional[String] $cli_username                  = undef,
-  Optional[Variant[String[1], Sensitive[String[8]]]] $cli_password = undef,
+  Optional[String] $cli_password                  = undef,
   Optional[String] $cli_password_file             = undef,
   Integer $cli_tries                              = $jenkins::params::cli_tries,
   Integer $cli_try_sleep                          = $jenkins::params::cli_try_sleep,
@@ -342,7 +342,7 @@ class jenkins (
   } elsif !empty($cli_username) {
     # Username / Password auth (needed for AD and other Auth Realms)
     if !empty($cli_password) {
-      $_cli_auth_arg = "-auth '${cli_username}:${cli_password.unwrap}'"
+      $_cli_auth_arg = "-auth '${cli_username}:${cli_password}'"
     } elsif !empty($cli_password_file) {
       $_cli_auth_arg = "-auth '@${cli_password_file}'"
     } else {
