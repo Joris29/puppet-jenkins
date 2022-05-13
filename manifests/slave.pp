@@ -310,7 +310,7 @@ class jenkins::slave (
     mode    => '0600',
     owner   => $defaults_user,
     group   => $defaults_group,
-    content => template("${module_name}/jenkins-slave-defaults.erb"),
+    content => Sensitive(template("${module_name}/jenkins-slave-defaults.erb")),
     notify  => Service['jenkins-slave'],
   }
 
