@@ -155,7 +155,7 @@ class jenkins::slave (
     default => $source,
   }
   $quoted_ui_user = shellquote($ui_user)
-  $quoted_ui_pass = shellquote($ui_pass)
+  $quoted_ui_pass = shellquote($ui_pass.unwrap)
 
   if $labels {
     if $labels =~ Array {

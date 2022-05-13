@@ -49,7 +49,7 @@ TUNNEL="<%= @tunnel -%>"
 
 # credentials should be single quoted
 JENKINS_USERNAME=<%= @quoted_ui_user %>
-JENKINS_PASSWORD=<%= @quoted_ui_pass.unwrap %>
+JENKINS_PASSWORD=<%= @quoted_ui_pass %>
 
 OTHER_ARGS="<%= @_real_swarm_client_args %>"
 
